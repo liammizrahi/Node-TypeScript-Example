@@ -17,6 +17,7 @@ Laranode uses this technologies:
 - [Express] - fast node.js network app framework
 - [TypeScript](https://www.typescriptlang.org/) - the streaming build system
 - [Handlebars](https://handlebarsjs.com/) - EJS Alternative similar to Laravel's blade
+- [Sequelize](https://sequelize.org/) - Database ORM
 
 ## Installation
 
