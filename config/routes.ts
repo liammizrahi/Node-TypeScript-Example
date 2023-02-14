@@ -1,7 +1,8 @@
 import { Router } from 'express';
 import express from 'express';
-import usersRouter from './routes/users';
-import rootRouter from './routes/root';
+import usersRouter from '../routes/users';
+import rootRouter from '../routes/root';
+
 
 const router = Router();
 

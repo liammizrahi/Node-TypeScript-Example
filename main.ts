@@ -1,8 +1,8 @@
 import 'dotenv/config';
 import express from 'express';
-import routes from './routes';
+import routes from './config/routes';
+import handlebarsConfig from './config/handlebars';
 import debug from "debug";
-import { engine } from 'express-handlebars';
 
 // definitions
 const app = express();
@@ -18,9 +18,10 @@ app.use((req, res, next) => {
 });
 
 // handlebars view engine
-app.engine('handlebars', engine());
-app.set('view engine', 'handlebars');
-app.set('views', './views');
+// set up handlebars view engine and view directory
+app.engine(handlebarsConfig.viewEngine, handlebarsConfig.engine);
+app.set('views', handlebarsConfig.viewDir);
+app.set('view engine', handlebarsConfig.viewEngine);
 
 // load all routes
 app.use(routes);
