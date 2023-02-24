@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import * as bodyParser from 'body-parser';
 import routes from './config/routes';
 import handlebarsConfig from './config/handlebars';
 import debug from "debug";
@@ -16,6 +17,13 @@ app.use((req, res, next) => {
     }
     next();
 });
+
+// body parsing from JSON and form data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// public assets folder
+app.use(express.static('public'));
 
 // handlebars view engine
 // set up handlebars view engine and view directory
