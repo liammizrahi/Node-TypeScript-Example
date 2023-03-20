@@ -1,6 +1,5 @@
 import 'dotenv/config';
 import express from 'express';
-import * as bodyParser from 'body-parser';
 import routes from './config/routes';
 import handlebarsConfig from './config/handlebars';
 import debug from "debug";
@@ -19,8 +18,10 @@ app.use((req, res, next) => {
 });
 
 // body parsing from JSON and form data
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({
+    extended: true
+}));
 
 // public assets folder
 app.use(express.static('public'));
