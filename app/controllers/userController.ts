@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import axios from 'axios';
 
 export class UserController {
-    public static async getCountries(req: Request, res: Response) {
+    public async getCountries(req: Request, res: Response) {
         const options = {
             method: 'GET',
             url: 'https://countries-cities.p.rapidapi.com/location/country/list',
@@ -17,7 +17,7 @@ export class UserController {
         res.json(response.data);
     }
 
-    static async getUsers(req: Request, res: Response) {
+    public async getUsers(req: Request, res: Response) {
         try {
             // Perform your user-related database queries here
 
