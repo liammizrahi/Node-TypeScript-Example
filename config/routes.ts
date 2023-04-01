@@ -1,12 +1,8 @@
 import { Router } from 'express';
-import express from 'express';
 import usersRouter from '../routes/users';
 import rootRouter from '../routes/root';
 
-
 const router = Router();
-
-router.use(express.static('public'));
 
 router.use('/users', usersRouter);
 router.use('', rootRouter);
